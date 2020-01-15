@@ -7,7 +7,7 @@ const increasedPrecent = 0.05;
 const specialPrecent = 0.3;
 
 
-const arrs = [
+const purchase = [
     {
         amount: 3500,
         category: REGULAR,
@@ -25,18 +25,21 @@ const arrs = [
 
 let cashback = 0;
 
-for(const arr of arrs){
+for(const purchase of purchases){
     
-    if(arr.category === REGULAR){
-        cashback = cashback + arr.amount * regularPercent;
+    if(purchase.category === REGULAR){
+        cashback = cashback + purchase.amount * regularPercent;
+        continue;
     }
 
-    if(arr.category === INCREASED){
-        cashback += arr.amount * increasedPrecent;
+    if(purchase.category === INCREASED){
+        cashback += purchase.amount * increasedPrecent;
+        continue;
     }
 
-    if(arr.category === SPECIAL){
-        cashback += arr.amount * specialPrecent;
+    if(purchase.category === SPECIAL){
+        cashback += purchase.amount * specialPrecent;
+        continue;
     }
 }
 
